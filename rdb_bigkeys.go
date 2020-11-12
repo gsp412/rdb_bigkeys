@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/cupcake/rdb"
+	"github.com/gsp412/rdb"
 )
 
 func main() {
@@ -18,7 +18,7 @@ func main() {
 	var sortResult bool
 
 	flag.UintVar(&sizeThreshold, "bytes", 1024, "only output keys used memory equal or greater than this size(in byte)")
-	flag.StringVar(&resultFile, "file", "", "the file the result write to, default sys stdout")
+	flag.StringVar(&resultFile, "file", "./big_keys.csv", "the file the result write to, default sys stdout")
 	flag.UintVar(&processThreads, "threads", 2, "threads to parsing rdb file")
 	flag.IntVar(&resultSep, "sep", 0, "seperator of result, 1: space, otherelse: comma, default 0")
 	flag.BoolVar(&sortResult, "sorted", false, "sort keys in descending order by memory")
